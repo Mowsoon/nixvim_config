@@ -9,7 +9,6 @@
   services.xserver.xkb.layout = "fr";
   console.keyMap = "fr";
 
-
   virtualisation = {
     sharedDirectories = {
       nixos-config = {
@@ -48,6 +47,10 @@
   };
 
   home-manager.users.testuser = {
+    imports = [
+      ../../modules/editor/nixvim.nix
+    ];
+
     home.stateVersion = "24.11";
 
     programs = {
@@ -58,53 +61,6 @@
           ll = "ls -l";
           update = "sudo nixos-rebuild switch --flake /mnt/nixos-config#vm-test";
         };
-      };
-
-      nixvim = {
-        enable = true;
-        defaultEditor = true;
-
-        nixpkgs.useGlobalPackages = true;
-
-        opts = {
-          mouse = "a";
-          clipboard = "unnamedplus";
-          number = true;
-          relativenumber = false;
-          scrolloff = 8;
-          wrap = false;
-          tabstop = 4;
-          shiftwidth = 4;
-        };
-
-        plugins = {
-          neo-tree = {
-            enable = true;
-            settings = {
-              enable_diagnostics = true;
-              enable_git_status = true;
-              close_if_last_window = true;
-            };
-          };
-          windsurf-vim.enable = true;
-        };
-
-        keymaps = [
-          {
-            mode = "n";
-            key = "<C-b>";
-            action = "<cmd>Neotree toggle<CR>";
-            options = {
-              desc = "Toggle Neo-tree";
-            };
-          }
-          {
-            mode = "v";
-            key = "<C-c>";
-            action = "\"+y";
-          }
-        ];
-
       };
 
       alacritty = {

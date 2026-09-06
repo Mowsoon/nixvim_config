@@ -11,9 +11,7 @@
 
     nixvim = {
       url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
-
   };
 
   outputs =
@@ -63,20 +61,21 @@
 
       apps.${system}.default = {
         type = "app";
-        program = "${pkgs.writeShellApplication {
-          name = "run-isolated-vm";
-          text = ''
-            VM_STATE_DIR="/tmp/nixos-vm"
-            mkdir -p "$VM_STATE_DIR"
+        program = "${
+          pkgs.writeShellApplication {
+            name = "run-isolated-vm";
+            text = ''
+              VM_STATE_DIR="/tmp/nixos-vm"
+              mkdir -p "$VM_STATE_DIR"
 
-            export NIX_DISK_IMAGE="$VM_STATE_DIR/vm-test.qcow2"
+              export NIX_DISK_IMAGE="$VM_STATE_DIR/vm-test.qcow2"
 
-            # Execute the packaged QEMU binary
-            exec ${self.nixosConfigurations.vm-test.config.system.build.vm}/bin/run-vm-test-vm "$@"
-          '';
-        }}/bin/run-isolated-vm";
+              # Execute the packaged QEMU binary
+              exec ${self.nixosConfigurations.vm-test.config.system.build.vm}/bin/run-vm-test-vm "$@"
+            '';
+          }
+        }/bin/run-isolated-vm";
       };
-
 
       nixosConfigurations.vm-test = nixpkgs.lib.nixosSystem {
         inherit system;
