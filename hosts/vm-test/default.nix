@@ -4,6 +4,9 @@
     ../../modules/desktop/plasma.nix
   ];
 
+  nixpkgs.config.allowUnfree = true;
+
+
   virtualisation = {
     sharedDirectories = {
       nixos-config = {
@@ -58,6 +61,8 @@
         enable = true;
         defaultEditor = true;
 
+        nixpkgs.useGlobalPackages = true;
+
         opts = {
           mouse = "a";
           clipboard = "unnamedplus";
@@ -72,11 +77,13 @@
         plugins = {
           neo-tree = {
             enable = true;
-            enableDiagnostics = true;
-            enableGitStatus = true;
-            closeIfLastWindow = true;
+            settings = {
+              enable_diagnostics = true;
+              enable_git_status = true;
+              close_if_last_window = true;
+            };
           };
-          codeium-vim.enable = true;
+          windsurf-vim.enable = true;
         };
 
         keymaps = [
