@@ -6,16 +6,16 @@
 
   virtualisation = {
     sharedDirectories = {
-        nixos-config = {
+      nixos-config = {
         source = "/home/alban/nixos-config";
         target = "/mnt/nixos-config";
-        };
+      };
     };
     vmVariant = {
-        virtualisation = {
-            memorySize = 8192;
-            cores = 4;
-        };
+      virtualisation = {
+        memorySize = 8192;
+        cores = 4;
+      };
     };
   };
 
@@ -41,7 +41,6 @@
     initialPassword = "test";
   };
 
-  # Declarative user-space via home-manager
   home-manager.users.testuser = {
     home.stateVersion = "24.11";
 
@@ -59,39 +58,41 @@
         enable = true;
         defaultEditor = true;
 
-        options = {
-            mouse = "a";
-            clipboard = "unnamedplus";
-            number = true;
-            relativenumber = false;
-            scrolloff = 8;
-            wrap = false;
-            tabstop = 4;
-            shiftwidth = 4;
+        opts = {
+          mouse = "a";
+          clipboard = "unnamedplus";
+          number = true;
+          relativenumber = false;
+          scrolloff = 8;
+          wrap = false;
+          tabstop = 4;
+          shiftwidth = 4;
         };
 
         plugins = {
-            neo-tree = {
-                enable = true;
-                enableDiagnostics = true;
-                enableGitStatus = true;
-                closeIfLastWindow = true;
-            };
-            codeium-vim.enable = true;
+          neo-tree = {
+            enable = true;
+            enableDiagnostics = true;
+            enableGitStatus = true;
+            closeIfLastWindow = true;
+          };
+          codeium-vim.enable = true;
         };
 
         keymaps = [
-            {
-                mode = "n";
-                key = "<C-b>";
-                action = "<cmd>Neotree toggle<CR>";
-                options.desc = "Toggle Neo-tree";
-            }
-            {
-                mode = "v";
-                key = "<C-c>";
-                action = "\"+y";
-            }
+          {
+            mode = "n";
+            key = "<C-b>";
+            action = "<cmd>Neotree toggle<CR>";
+            options = {
+              desc = "Toggle Neo-tree";
+            };
+          }
+          {
+            mode = "v";
+            key = "<C-c>";
+            action = "\"+y";
+          }
         ];
 
       };

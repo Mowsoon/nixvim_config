@@ -1,5 +1,5 @@
 {
-  description = "Advanced NixOS configuration";
+  description = "NixVim Configuration";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -75,11 +75,12 @@
               useUserPackages = true;
               extraSpecialArgs = { inherit inputs; };
               sharedModules = [
-                nixvim.homeManagerModules.nixvim
+                nixvim.homeModules.nixvim
               ];
             };
           }
         ];
       };
     };
+
 }
