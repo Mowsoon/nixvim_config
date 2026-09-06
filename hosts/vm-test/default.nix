@@ -6,12 +6,15 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  services.xserver.xkb.layout = "fr";
+  console.keyMap = "fr";
+
 
   virtualisation = {
     sharedDirectories = {
       nixos-config = {
-        source = "/home/alban/nixos-config";
-        target = "/mnt/nixos-config";
+        source = "/home/alban/nixvim-config";
+        target = "/mnt/nixvim-config";
       };
     };
     vmVariant = {
