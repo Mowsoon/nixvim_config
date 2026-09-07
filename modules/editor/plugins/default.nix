@@ -5,5 +5,6 @@
     ./lualine.nix
     ./bufferline.nix
     ./neotree.nix
+    ./alpha.nix
   ];
 }
