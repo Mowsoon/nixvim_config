@@ -4,5 +4,6 @@
         ./fugitive.nix
         ./whichkey.nix
         ./toggleterm.nix
+        ./autosession.nix
     ];
 }
