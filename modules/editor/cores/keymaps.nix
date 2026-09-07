@@ -209,5 +209,14 @@
       action = "<cmd>bdelete<CR>";
       options = { silent = true; desc = "Delete buffer"; };
     }
+    # -------------------------------------------------------------
+    # Toggle file explorer (\e)
+    # -------------------------------------------------------------
+    {
+      mode = "n";
+      key = "<leader>e";
+      action = "<cmd>Neotree toggle<CR>";
+      options = { silent = true; desc = "Toggle file explorer"; };
+    }
   ];
 }
