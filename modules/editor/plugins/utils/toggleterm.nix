@@ -31,18 +31,24 @@
 
   programs.nixvim.keymaps = [
     {
-      mode = [ "n" "t" ];
+      mode = [
+        "n"
+        "t"
+      ];
       key = "<leader>tf";
-      action = ''<cmd>ToggleTerm direction=float<CR>'';
+      action = "<cmd>ToggleTerm direction=float<CR>";
       options = {
         silent = true;
         desc = "Toggle terminal (float)";
       };
     }
     {
-      mode = [ "n" "t" ];
+      mode = [
+        "n"
+        "t"
+      ];
       key = "<leader>th";
-      action = ''<cmd>ToggleTerm size=15 direction=horizontal<CR>'';
+      action = "<cmd>ToggleTerm size=15 direction=horizontal<CR>";
       options = {
         silent = true;
         desc = "Toggle terminal (horizontal split)";

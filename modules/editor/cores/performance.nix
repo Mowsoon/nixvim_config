@@ -8,7 +8,7 @@
 
     combinePlugins = {
       enable = true;
-      standalonePlugins = [];
+      standalonePlugins = [ ];
     };
   };
 }

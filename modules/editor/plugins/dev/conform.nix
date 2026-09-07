@@ -1,49 +1,54 @@
-{ pkgs }:
+{ pkgs, ... }:
 
 {
-  extraPackages = with pkgs; [
-    nixfmt-rfc-style
-    ruff
-    gotools         
-    clang-tools    
-    shfmt
-  ];
+  programs.nixvim = {
+    extraPackages = with pkgs; [
+      nixfmt
+      ruff
+      gotools
+      clang-tools
+      shfmt
+    ];
 
-  programs.nixvim.plugins.conform-nvim = {
-    enable = true;
+    plugins.conform-nvim = {
+      enable = true;
 
-    settings = {
-      formatters_by_ft = {
-        nix = [ "nixfmt" ];
-        go = [ "goimports" "gofmt" ];
-        python = [ "ruff_format" ];
-        c = [ "clang-format" ];
-        cpp = [ "clang-format" ];
-        bash = [ "shfmt" ];
-        sh = [ "shfmt" ];
-        "_" = [ "trim_whitespace" ];
+      settings = {
+        formatters_by_ft = {
+          nix = [ "nixfmt" ];
+          go = [
+            "goimports"
+            "gofmt"
+          ];
+          python = [ "ruff_format" ];
+          c = [ "clang-format" ];
+          cpp = [ "clang-format" ];
+          bash = [ "shfmt" ];
+          sh = [ "shfmt" ];
+          "_" = [ "trim_whitespace" ];
+        };
+
+        format_on_save = {
+          timeout_ms = 500;
+          lsp_format = "fallback";
+        };
+
+        notify_on_error = true;
       };
-
-      format_on_save = {
-        timeout_ms = 500;
-        lsp_format = "fallback";
-      };
-
-      notify_on_error = true;
     };
-  };
 
-  programs.nixvim.keymaps = [
-    {
-      mode = "n";
-      key = "<leader>cf";
-      action = ''
-        <cmd>lua require("conform").format({ async = true, lsp_format = "fallback" })<CR>
-      '';
-      options = {
-        silent = true;
-        desc = "Format buffer (Conform)";
-      };
-    }
-  ];
+    keymaps = [
+      {
+        mode = "n";
+        key = "<leader>cf";
+        action = ''
+          <cmd>lua require("conform").format({ async = true, lsp_format = "fallback" })<CR>
+        '';
+        options = {
+          silent = true;
+          desc = "Format buffer (Conform)";
+        };
+      }
+    ];
+  };
 }

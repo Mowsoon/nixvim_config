@@ -3,9 +3,7 @@
     enable = true;
     theme = null;
 
-    iconsEnabled = false;
-
-    layout = [
+    settings.layout = [
       {
         type = "padding";
         val = 4;
@@ -36,7 +34,12 @@
             val = "  [f]  Find File";
             on_press.__raw = "function() require('telescope.builtin').find_files() end";
             opts = {
-              keymap = [ "n" "f" ":Telescope find_files<CR>" { silent = true; } ];
+              keymap = [
+                "n"
+                "f"
+                ":Telescope find_files<CR>"
+                { silent = true; }
+              ];
               position = "center";
               shortcut = "f";
               hl = "String";
@@ -48,7 +51,12 @@
             val = "  [r]  Recent Files";
             on_press.__raw = "function() require('telescope.builtin').oldfiles() end";
             opts = {
-              keymap = [ "n" "r" ":Telescope oldfiles<CR>" { silent = true; } ];
+              keymap = [
+                "n"
+                "r"
+                ":Telescope oldfiles<CR>"
+                { silent = true; }
+              ];
               position = "center";
               shortcut = "r";
               hl = "String";
@@ -60,7 +68,12 @@
             val = "  [g]  Live Grep";
             on_press.__raw = "function() require('telescope.builtin').live_grep() end";
             opts = {
-              keymap = [ "n" "g" ":Telescope live_grep<CR>" { silent = true; } ];
+              keymap = [
+                "n"
+                "g"
+                ":Telescope live_grep<CR>"
+                { silent = true; }
+              ];
               position = "center";
               shortcut = "g";
               hl = "String";
@@ -72,7 +85,12 @@
             val = "  [e]  File Explorer";
             on_press.__raw = "function() vim.cmd('Neotree toggle') end";
             opts = {
-              keymap = [ "n" "e" ":Neotree toggle<CR>" { silent = true; } ];
+              keymap = [
+                "n"
+                "e"
+                ":Neotree toggle<CR>"
+                { silent = true; }
+              ];
               position = "center";
               shortcut = "e";
               hl = "String";
@@ -84,7 +102,12 @@
             val = "  [n]  New Buffer";
             on_press.__raw = "function() vim.cmd('enew') end";
             opts = {
-              keymap = [ "n" "n" ":enew<CR>" { silent = true; } ];
+              keymap = [
+                "n"
+                "n"
+                ":enew<CR>"
+                { silent = true; }
+              ];
               position = "center";
               shortcut = "n";
               hl = "String";
@@ -96,7 +119,12 @@
             val = "  [q]  Quit";
             on_press.__raw = "function() vim.cmd('quit') end";
             opts = {
-              keymap = [ "n" "q" ":quit<CR>" { silent = true; } ];
+              keymap = [
+                "n"
+                "q"
+                ":quit<CR>"
+                { silent = true; }
+              ];
               position = "center";
               shortcut = "q";
               hl = "String";

@@ -8,7 +8,10 @@
 
       win = {
         border = "rounded";
-        padding = [ 1 2 ];
+        padding = [
+          1
+          2
+        ];
         title = true;
       };
 

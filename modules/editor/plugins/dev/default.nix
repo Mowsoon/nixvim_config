@@ -1,9 +1,9 @@
 {
-    imports = [
-        ./treesitter.nix
-        ./lsp.nix
-        ./cmp.nix
-        ./conform.nix
-        ./lint.nix
-    ];
+  imports = [
+    ./treesitter.nix
+    ./lsp.nix
+    ./cmp.nix
+    ./conform.nix
+    ./lint.nix
+  ];
 }
