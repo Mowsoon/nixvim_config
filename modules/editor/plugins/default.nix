@@ -6,5 +6,6 @@
     ./bufferline.nix
     ./neotree.nix
     ./alpha.nix
+    ./devicons.nix
   ];
 }

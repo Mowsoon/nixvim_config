@@ -1,7 +1,7 @@
 {
   programs.nixvim.plugins.alpha = {
     enable = true;
-    theme = null; # Mode personnalisé
+    theme = null;
 
     iconsEnabled = false;
 
@@ -21,7 +21,7 @@
         ];
         opts = {
           position = "center";
-          hl = "Keyword"; # Utilise la palette Rosé Pine
+          hl = "Keyword";
         };
       }
       {
