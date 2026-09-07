@@ -1,11 +1,6 @@
 {
   imports = [
-    ./treesitter.nix
-    ./telescope.nix
-    ./lualine.nix
-    ./bufferline.nix
-    ./neotree.nix
-    ./alpha.nix
-    ./devicons.nix
+    ./dev
+    ./ui
   ];
 }
