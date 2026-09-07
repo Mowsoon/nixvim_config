@@ -5,5 +5,6 @@
         ./keymaps.nix
         ./userCmd.nix
         ./colorscheme.nix
+        ./performance.nix
     ]
 }
