@@ -36,6 +36,10 @@
           __unkeyed-1 = "<leader>h";
           group = "Git Hunks (Gitsigns)";
         }
+        {
+          __unkeyed-1 = "<leader>x";
+          group = "Diagnostics (Trouble)";
+        }
       ];
     };
   };

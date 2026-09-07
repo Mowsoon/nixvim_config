@@ -6,54 +6,20 @@
       enable = true;
 
       grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
-        angular
-        awk
         bash
         c
         cpp
-        css
-        caddy
-        cmake
-        dockerfile
-        gitcommit
-        gitignore
         go
-        goctl
         gomod
         gosum
-        groovy
-        html
-        java
-        javascript
+        python
+        yaml
         json
-        json5
-        latex
+        nix
+        terraform
+        markdown
         lua
         make
-        markdown
-        mermaid
-        nix
-        ocaml
-        perl
-        php
-        puppet
-        python
-        regex
-        requirements
-        rust
-        sql
-        ssh-config
-        terraform
-        toml
-        tsv
-        tsx
-        typescript
-        vim
-        vue
-        xml
-        yaml
-        zig
-        zsh
       ];
 
       settings = {

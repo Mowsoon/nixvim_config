@@ -5,5 +5,6 @@
     ./cmp.nix
     ./conform.nix
     ./lint.nix
+    ./trouble.nix
   ];
 }

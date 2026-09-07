@@ -6,5 +6,6 @@
     ./telescope.nix
     ./alpha.nix
     ./bufferline.nix
+    ./fidget.nix
   ];
 }

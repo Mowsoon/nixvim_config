@@ -2,6 +2,17 @@
   programs.nixvim.plugins.neo-tree = {
     enable = true;
 
+    lazyLoad.settings = {
+      cmd = [ "Neotree" ];
+      keys = [
+        {
+          __unkeyed-1 = "<leader>e";
+          __unkeyed-2 = "<cmd>Neotree toggle<CR>";
+          desc = "Toggle file explorer";
+        }
+      ];
+    };
+
     settings = {
       close_if_last_window = true;
       popup_border_style = "rounded";

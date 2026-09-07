@@ -11,6 +11,17 @@
 
     extensions.fzf-native.enable = true;
 
+    lazyLoad.settings = {
+      cmd = [ "Telescope" ];
+      keys = [
+        "<leader>ff"
+        "<leader>fg"
+        "<leader>fb"
+        "<leader>fr"
+        "<leader>fh"
+      ];
+    };
+
     keymaps = {
       "<leader>ff" = {
         action = "find_files";
