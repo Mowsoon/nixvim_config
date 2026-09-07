@@ -72,7 +72,7 @@
           ];
         };
         commands = {
-          copy_path = ''
+          copy_path.__raw = ''
             function(state)
               local node = state.tree:get_node()
               local filepath = node:get_id()

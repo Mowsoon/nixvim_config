@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   imports = [
     ../../modules/core/motd.nix
@@ -5,6 +6,10 @@
   ];
 
   nixpkgs.config.allowUnfree = true;
+
+  environment.systemPackages = with pkgs; [
+    python3
+  ];
 
   services.xserver.xkb.layout = "fr";
   console.keyMap = "fr";
