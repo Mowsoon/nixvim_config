@@ -1,11 +1,8 @@
 {
 
   imports = [
-    ./keymaps.nix
-    ./opts.nix
-    ./autoCmd.nix
+    ./cores
     ./plugins
-    ./userCmd.nix
   ];
 
   programs.nixvim = {
