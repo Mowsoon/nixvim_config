@@ -3,5 +3,6 @@
     ./treesitter.nix
     ./telescope.nix
     ./lualine.nix
+    ./bufferline.nix
   ];
 }

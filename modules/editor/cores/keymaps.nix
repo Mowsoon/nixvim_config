@@ -182,5 +182,32 @@
         desc = "Clear search highlight";
       };
     }
+    # -------------------------------------------------------------
+    # Next buffer (Tab)
+    # -------------------------------------------------------------
+    {
+      mode = "n";
+      key = "<Tab>";
+      action = "<cmd>BufferLineCycleNext<CR>";
+      options = { silent = true; desc = "Next buffer"; };
+    }
+    # -------------------------------------------------------------
+    # Previous buffer (Shift+Tab)
+    # -------------------------------------------------------------
+    {
+      mode = "n";
+      key = "<S-Tab>";
+      action = "<cmd>BufferLineCyclePrev<CR>";
+      options = { silent = true; desc = "Previous buffer"; };
+    }
+    # -------------------------------------------------------------
+    # Delete buffer (\bd)
+    # -------------------------------------------------------------
+    {
+      mode = "n";
+      key = "<leader>bd";
+      action = "<cmd>bdelete<CR>";
+      options = { silent = true; desc = "Delete buffer"; };
+    }
   ];
 }
